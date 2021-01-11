@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledLink, StyledNavbar, StyledNavBrand, StyledNavItems } from "../styled/Navbar";
+import {
+  StyledLink,
+  StyledNavbar,
+  StyledNavBrand,
+  StyledNavItems,
+} from "../styled/Navbar";
 import { Accent } from "../styled/Random";
 
 export default function Navbar() {
