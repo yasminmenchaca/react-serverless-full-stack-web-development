@@ -6,7 +6,7 @@ import {
   StyledNavItems,
 } from "../styled/Navbar";
 import { Accent } from "../styled/Random";
-import { useAuth0 } from "../auth";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Navbar() {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
