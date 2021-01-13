@@ -4,24 +4,15 @@ import "./index.css";
 import App from "./App";
 import { ScoreProvider } from "./contexts/ScoreContext";
 import { Auth0Provider } from "@auth0/auth0-react";
-import history from "./utils/history";
 import config from "./auth_config.json";
 import reportWebVitals from "./reportWebVitals";
 
-const onRedirectCallback = (appState) => {
-  history.push(
-    appState && appState.targetUrl
-      ? appState.targetUrl
-      : window.location.pathname
-  );
-};
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
       domain={config.domain}
       clientId={config.clientId}
       redirectUri={window.location.origin}
-      onRedirectCallback={onRedirectCallback}
     >
       <ScoreProvider>
         <App />
