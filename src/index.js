@@ -13,6 +13,7 @@ ReactDOM.render(
       domain={config.domain}
       clientId={config.clientId}
       redirectUri={window.location.origin}
+      audience={config.audience}
     >
       <ScoreProvider>
         <App />
