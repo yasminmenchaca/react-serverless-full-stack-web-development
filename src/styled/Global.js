@@ -1,16 +1,25 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
-    *{
-        box-sizing: border-box;
-        color: #333;
-        margin: 0;
-        font-family: sans-serif;
-        font-weight: 300;
-    }
+const isDarkThemeEnabled = false;
 
-    h1, h2{
-        margin-bottom: 2rem;
-    
-    }
+export default createGlobalStyle`
+:root{
+    --main-bg-color: ${isDarkThemeEnabled ? '#333': '#f9f9f9'};
+    --main-text-color: ${isDarkThemeEnabled ? '#f9f9f9': '#333'};
+    --accent-color: #e16365;
+
+}
+
+*{
+    box-sizing: border-box;
+    color: var(--main-text-color);
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+h1, h2{
+    margin-bottom: 2rem;
+
+}
 `;
