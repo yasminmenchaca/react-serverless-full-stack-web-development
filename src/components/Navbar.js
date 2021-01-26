@@ -4,7 +4,9 @@ import {
   StyledNavbar,
   StyledNavBrand,
   StyledNavItems,
+  StyledButtonLink,
 } from "../styled/Navbar";
+import { StyledButton } from "../styled/Buttons";
 import { Accent } from "../styled/Random";
 import { useAuth0 } from "@auth0/auth0-react";
 import useTheme from "../hooks/UseTheme";
@@ -27,21 +29,21 @@ export default function Navbar({ toggleTheme }) {
         </li>
         {!isAuthenticated && (
           <li>
-            <button button onClick={() => loginWithRedirect()}>
+            <StyledButtonLink onClick={() => loginWithRedirect()}>
               Login
-            </button>
+            </StyledButtonLink>
           </li>
         )}
         {isAuthenticated && (
           <li>
-            <button
+            <StyledButtonLink
               onClick={() => logout({ returnTo: window.location.origin })}
             >
               Logout
-            </button>
+            </StyledButtonLink>
           </li>
         )}
-        <button onClick={toggleTheme}>Toggle Theme</button>
+        <StyledButton onClick={toggleTheme}>Toggle Theme</StyledButton>
       </StyledNavItems>
     </StyledNavbar>
   );
